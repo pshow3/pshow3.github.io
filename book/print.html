@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">开始使用</li><li class="chapter-item expanded "><a href="jieshao.html"><strong aria-hidden="true">1.</strong> 介绍</a></li><li class="chapter-item expanded "><a href="kuaisukaishi.html"><strong aria-hidden="true">2.</strong> 快速开始</a></li><li class="chapter-item expanded "><a href="rumenjiaocheng.html"><strong aria-hidden="true">3.</strong> 入门教程</a></li><li class="chapter-item expanded affix "><li class="part-title">常用对象</li><li class="chapter-item expanded "><a href="pptshow.html"><strong aria-hidden="true">4.</strong> PPT文件</a></li><li class="chapter-item expanded "><a href="pptShowSide.html"><strong aria-hidden="true">5.</strong> PPT页面</a></li><li class="chapter-item expanded "><a href="pptImg.html"><strong aria-hidden="true">6.</strong> PPT图片</a></li><li class="chapter-item expanded "><a href="pptShape.html"><strong aria-hidden="true">7.</strong> PPT图形</a></li><li class="chapter-item expanded "><a href="pptLine.html"><strong aria-hidden="true">8.</strong> PPT线段</a></li><li class="chapter-item expanded "><a href="pptText.html"><strong aria-hidden="true">9.</strong> PPT文本</a></li><li class="chapter-item expanded "><a href="PPTInnerLine.html"><strong aria-hidden="true">10.</strong> PPT文本中的段落</a></li><li class="chapter-item expanded affix "><li class="part-title">通用样式</li><li class="chapter-item expanded "><a href="cutting.html"><strong aria-hidden="true">11.</strong> Cutting裁剪</a></li><li class="chapter-item expanded "><a href="border.html"><strong aria-hidden="true">12.</strong> Border边框</a></li><li class="chapter-item expanded "><a href="shadow.html"><strong aria-hidden="true">13.</strong> Shadow阴影</a></li><li class="chapter-item expanded "><a href="background.html"><strong aria-hidden="true">14.</strong> Background背景</a></li><li class="chapter-item expanded "><a href="gradient.html"><strong aria-hidden="true">15.</strong> Gradient渐变</a></li><li class="chapter-item expanded affix "><li class="part-title">工具类</li><li class="chapter-item expanded "><a href="util.html"><strong aria-hidden="true">16.</strong> PPTUtil</a></li><li class="chapter-item expanded affix "><li class="part-title">关于和反馈</li><li class="chapter-item expanded "><a href="about.html"><strong aria-hidden="true">17.</strong> 关于</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">开始使用</li><li class="chapter-item expanded "><a href="jieshao.html"><strong aria-hidden="true">1.</strong> 介绍</a></li><li class="chapter-item expanded "><a href="kuaisukaishi.html"><strong aria-hidden="true">2.</strong> 快速开始</a></li><li class="chapter-item expanded "><a href="rumenjiaocheng.html"><strong aria-hidden="true">3.</strong> 入门教程</a></li><li class="chapter-item expanded affix "><li class="part-title">常用对象</li><li class="chapter-item expanded "><a href="pptshow.html"><strong aria-hidden="true">4.</strong> PPT文件</a></li><li class="chapter-item expanded "><a href="pptShowSide.html"><strong aria-hidden="true">5.</strong> PPT页面</a></li><li class="chapter-item expanded "><a href="pptImg.html"><strong aria-hidden="true">6.</strong> PPT图片</a></li><li class="chapter-item expanded "><a href="pptShape.html"><strong aria-hidden="true">7.</strong> PPT图形</a></li><li class="chapter-item expanded "><a href="pptLine.html"><strong aria-hidden="true">8.</strong> PPT线段</a></li><li class="chapter-item expanded "><a href="pptText.html"><strong aria-hidden="true">9.</strong> PPT文本</a></li><li class="chapter-item expanded "><a href="PPTInnerLine.html"><strong aria-hidden="true">10.</strong> PPT文本中的段落</a></li><li class="chapter-item expanded "><a href="pptInnerText.html"><strong aria-hidden="true">11.</strong> PPT文本段落中的一个样式最小单元</a></li><li class="chapter-item expanded affix "><li class="part-title">通用样式</li><li class="chapter-item expanded "><a href="cutting.html"><strong aria-hidden="true">12.</strong> Cutting裁剪</a></li><li class="chapter-item expanded "><a href="border.html"><strong aria-hidden="true">13.</strong> Border边框</a></li><li class="chapter-item expanded "><a href="shadow.html"><strong aria-hidden="true">14.</strong> Shadow阴影</a></li><li class="chapter-item expanded "><a href="background.html"><strong aria-hidden="true">15.</strong> Background背景</a></li><li class="chapter-item expanded "><a href="gradient.html"><strong aria-hidden="true">16.</strong> Gradient渐变</a></li><li class="chapter-item expanded "><a href="InAnimation.html"><strong aria-hidden="true">17.</strong> InAnimation进场动画</a></li><li class="chapter-item expanded "><a href="outAnimation.html"><strong aria-hidden="true">18.</strong> OutAnimation出场动画</a></li><li class="chapter-item expanded affix "><li class="part-title">工具类</li><li class="chapter-item expanded "><a href="util.html"><strong aria-hidden="true">19.</strong> PPTUtil</a></li><li class="chapter-item expanded affix "><li class="part-title">关于和反馈</li><li class="chapter-item expanded "><a href="about.html"><strong aria-hidden="true">20.</strong> 关于</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -377,6 +377,13 @@ OPEN_DOOR(&quot;开门&quot;, PageSwitchingType.OPEN_DOOR_XML),
 STRIPPING(&quot;剥离&quot;, PageSwitchingType.STRIPPING_XML),
 RANDOM(&quot;随机&quot;, PageSwitchingType.RANDOM_XML)
 </code></pre>
+<h2 id="设置样式"><a class="header" href="#设置样式">设置样式</a></h2>
+<p><code>PPTSideCss</code> 是 <code>PPTShowSide</code> 对应的样式表</p>
+<p>目前只有一个属性允许用户自定义</p>
+<h3 id="background-背景"><a class="header" href="#background-背景">background 背景</a></h3>
+<pre><code class="language-Java">private Background background;
+</code></pre>
+<p>背景样式，请参考【参考文档】-【通用样式】-【background背景】</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="ppt图片pptimg"><a class="header" href="#ppt图片pptimg">PPT图片——PPTImg</a></h1>
 <p>PPTImg对象表示PPT中的图片元素</p>
 <h2 id="创建pptimg"><a class="header" href="#创建pptimg">创建PPTImg</a></h2>
@@ -396,6 +403,13 @@ RANDOM(&quot;随机&quot;, PageSwitchingType.RANDOM_XML)
 <p>注意：仅支持本地文件绝对路径，不支持如http开头的在线图片信息！</p>
 <pre><code class="language-Java">PPTImg setFile(String file)
 </code></pre>
+<h2 id="设置动画"><a class="header" href="#设置动画">设置动画</a></h2>
+<pre><code class="language-Java">//进场动画
+private InAnimation inAnimation;
+//出场动画
+private OutAnimation outAnimation;
+</code></pre>
+<p>请参考【参考文档】-【通用样式】-【InAnimation进场动画】和【OutAnimation出场动画】内容进行设定</p>
 <h2 id="读取图片路径"><a class="header" href="#读取图片路径">读取图片路径</a></h2>
 <p>获取PPTImg对象的图片路径</p>
 <pre><code class="language-Java">String getFile()
@@ -465,6 +479,13 @@ private PPTImgCss css;
 </code></pre>
 <pre><code class="language-Java">PPTShape pptShape = new PPTShape();
 </code></pre>
+<h2 id="设置动画-1"><a class="header" href="#设置动画-1">设置动画</a></h2>
+<pre><code class="language-Java">//进场动画
+private InAnimation inAnimation;
+//出场动画
+private OutAnimation outAnimation;
+</code></pre>
+<p>请参考【参考文档】-【通用样式】-【InAnimation进场动画】和【OutAnimation出场动画】内容进行设定</p>
 <h2 id="设定样式-1"><a class="header" href="#设定样式-1">设定样式</a></h2>
 <p>您可以通过 <code>css</code> 属性来设置样式信息，接下来我们将详细讲解 <code>PPTImgCss</code> 属性及含义。</p>
 <pre><code class="language-Java">@Getter
@@ -552,6 +573,20 @@ private String custGeom;
 <p>您可以通过以下方式创建一个PPTLine对象</p>
 <pre><code class="language-Java">PPTLine pptLine = new PPTLine();
 </code></pre>
+<h2 id="设置动画-2"><a class="header" href="#设置动画-2">设置动画</a></h2>
+<pre><code class="language-Java">//进场动画
+private InAnimation inAnimation;
+//出场动画
+private OutAnimation outAnimation;
+</code></pre>
+<p>请参考【参考文档】-【通用样式】-【InAnimation进场动画】和【OutAnimation出场动画】内容进行设定</p>
+<h2 id="设置动画-3"><a class="header" href="#设置动画-3">设置动画</a></h2>
+<pre><code class="language-Java">//进场动画
+private InAnimation inAnimation;
+//出场动画
+private OutAnimation outAnimation;
+</code></pre>
+<p>请参考【参考文档】-【通用样式】-【InAnimation进场动画】和【OutAnimation出场动画】内容进行设定</p>
 <h2 id="设定样式-2"><a class="header" href="#设定样式-2">设定样式</a></h2>
 <p>您可以通过 <code>css</code> 属性来设置样式信息，接下来我们将详细讲解 <code>PPTImgCss</code> 属性及含义。</p>
 <pre><code class="language-Java">@Getter
@@ -774,13 +809,74 @@ private PPTInnerLineCss css;
 <li><code>PPTNameConstant.ALIGN_DIST</code> 分散对齐</li>
 </ul>
 <p>五种类型对应下图画圈的部分，图中从左到右顺序即为上方顺序</p>
-<p><img src=".%5Cimg%5Ctext4.png" alt="text4" /></p>
+<p><img src="img/text4.png" alt="text4" /></p>
 <h2 id="特别说明"><a class="header" href="#特别说明">特别说明</a></h2>
 <p>实际上每一行都有一个end对象，用户可以get或者set：</p>
 <pre><code class="language-Java">private PPTInnerTextEnd end
 </code></pre>
 <p>它表示行尾信息，我们十分不推荐使用者自定设定有关参数，系统会自动添加行尾对象。</p>
 <p>如果您不完全明白其中参数含义，请不要手动修改，如果认为当前有功能无法实现推荐提issues解决！</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ppt文本段落中的一个样式最小单元pptinnertext"><a class="header" href="#ppt文本段落中的一个样式最小单元pptinnertext">PPT文本段落中的一个样式最小单元——PPTInnerText</a></h1>
+<p>有关 <code>PPTText</code> 、 <code>PPTInnerLine</code>、<code>PPTInnerText</code>的关系，请参考<code>PPTText</code>的文档</p>
+<h2 id="创建pptinnertext"><a class="header" href="#创建pptinnertext">创建PPTInnerText</a></h2>
+<p>您可以通过以下方式创建一个<code>PPTInnerText</code>对象，两种方式没有任何差别：</p>
+<pre><code class="language-Java">PPTInnerText pptInnerText = new PPTInnerText();
+</code></pre>
+<pre><code class="language-Java">PPTInnerText pptInnerText = PPTInnerText.build();
+</code></pre>
+<p>您还可以直接创建对象同时设置文本信息：</p>
+<pre><code class="language-Java">PPTInnerText pptInnerText = new PPTInnerText(String text);
+</code></pre>
+<pre><code class="language-Java">PPTInnerText pptInnerText = PPTInnerText.build(String text);
+</code></pre>
+<p>您还可以同时再设置样式表：</p>
+<pre><code class="language-Java">PPTInnerText pptInnerText = new PPTInnerText(String text, PPTInnerTextCss pptInnerTextCss);
+</code></pre>
+<pre><code class="language-Java">PPPTInnerText pptInnerText = PPTInnerText.build(String text, PPTInnerTextCss pptInnerTextCss);
+</code></pre>
+<h2 id="设置文本"><a class="header" href="#设置文本">设置文本</a></h2>
+<p>您可以通过 text 属性设置或读取文本的内容，支持Get和Set方法</p>
+<pre><code class="language-Java">@Setter
+@Getter
+private String text = null;
+</code></pre>
+<h2 id="设定样式-5"><a class="header" href="#设定样式-5">设定样式</a></h2>
+<p>您可以通过 <code>css</code> 属性来设置样式信息，接下来我们将详细讲解 <code>PPTInnerTextCss</code> 属性及含义。</p>
+<pre><code class="language-Java">@Setter
+@Getter
+private PPTInnerTextCss css = new PPTInnerTextCss();
+</code></pre>
+<h2 id="pptinnertextcss"><a class="header" href="#pptinnertextcss">PPTInnerTextCss</a></h2>
+<p><code>PPTInnerText</code> 对应的样式表对象</p>
+<h3 id="fontsize"><a class="header" href="#fontsize">fontSize</a></h3>
+<pre><code class="language-Java">private int fontSize = 18;
+</code></pre>
+<p>字体大小，默认为18</p>
+<p>和WPS、Ms Office里面的字号是一样的</p>
+<p><img src="img/itext1.png" alt="itext1" /></p>
+<h3 id="spacing"><a class="header" href="#spacing">spacing</a></h3>
+<pre><code class="language-Java">private double spacing = 0;
+</code></pre>
+<p>字符间距，默认为0，表示默认</p>
+<p>改为负值后文字更加紧凑，改为正值后文字更加宽松</p>
+<h3 id="fontfamily"><a class="header" href="#fontfamily">fontFamily</a></h3>
+<pre><code class="language-Java">private String fontFamily = &quot;宋体&quot;;
+</code></pre>
+<p>字体，如果电脑里面没有这个字体即便设置了也无法正常显示</p>
+<p>建议使用前先读取系统中有哪些字体</p>
+<p>另外有部分字体存在多个个人或机构打包，可能导致一套字体拥有不同的名称（如：思源系列字体），请留意类似情况！</p>
+<h3 id="color-1"><a class="header" href="#color-1">color</a></h3>
+<pre><code class="language-Java">private String color = &quot;000000&quot;;
+</code></pre>
+<p>文本颜色，16进制颜色码，不带#号。默认为黑色</p>
+<h3 id="italic"><a class="header" href="#italic">italic</a></h3>
+<pre><code class="language-Java">private boolean italic;
+</code></pre>
+<p>是否文字倾斜，默认不倾斜。为true时倾斜展示。</p>
+<h3 id="bold"><a class="header" href="#bold">bold</a></h3>
+<pre><code class="language-Java">private boolean bold;
+</code></pre>
+<p>是否文本加粗显示，默认不加粗，为true时加粗展示。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="裁剪cutting"><a class="header" href="#裁剪cutting">裁剪——Cutting</a></h1>
 <p>Cutting对象表示对元素进行剪裁，形成指定的形状</p>
 <h2 id="创建cutting"><a class="header" href="#创建cutting">创建Cutting</a></h2>
@@ -923,6 +1019,66 @@ private PPTInnerLineCss css;
 <pre><code class="language-Java">private Double lum;
 </code></pre>
 <p>亮度，0-100，数字越大越暗</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="进场动画inanimation"><a class="header" href="#进场动画inanimation">进场动画——InAnimation</a></h1>
+<p>InAnimation表示进场动画，也被称为出现动画。</p>
+<p>所有<code>AnimationElement</code>的子类都拥有进场和出场动画属性。</p>
+<pre><code class="language-Java">private InAnimation inAnimation;
+</code></pre>
+<p>您可以通过Set或者Get方法对此内容进行修改或读取</p>
+<p>默认值为null，即没有动画。</p>
+<p>以下是InAnimation包含的属性：</p>
+<h2 id="showanimationtype-展示时间"><a class="header" href="#showanimationtype-展示时间">showAnimationType 展示时间</a></h2>
+<pre><code class="language-Java">private ShowAnimationType showAnimationType = ShowAnimationType.SAME_TIME;
+</code></pre>
+<p>这个属性设置的是动画出现时间，允许的枚举值有以下三种：</p>
+<ul>
+<li><code>ShowAnimationType.SAME_TIME</code> 同时出现（默认）</li>
+<li><code>ShowAnimationType.CLICK</code> 单击出现</li>
+<li><code>ShowAnimationType.AFTER</code> 在上一动画完成后出现</li>
+</ul>
+<h2 id="inanimationtype-入场动画效果"><a class="header" href="#inanimationtype-入场动画效果">inAnimationType 入场动画效果</a></h2>
+<pre><code class="language-Java">private InAnimationType inAnimationType;
+</code></pre>
+<p>默认是null</p>
+<p>如果您不希望有动画请不要在这里设置成null，而是直接把文档开头提到的<code>inAnimation</code>设置为null</p>
+<p>属性是一个枚举类，目前支持以下效果：</p>
+<pre><code class="language-Java">InAnimationType.BLINDS,//百叶窗
+InAnimationType.WIPE,//擦除
+InAnimationType.WHEEL,//轮子
+InAnimationType.SPLITTING,//劈裂
+InAnimationType.BOARD,//棋盘
+InAnimationType.LINE,//随机线条
+InAnimationType.ZOOM//缩放
+</code></pre>
+<p><code>InAnimationType</code> 枚举类中包含了中文名称和默认持续时间，可以供您参考。</p>
+<p>不在以上列表中的样式不建议使用</p>
+<h2 id="animationattribute-属性信息"><a class="header" href="#animationattribute-属性信息">animationAttribute 属性信息</a></h2>
+<pre><code class="language-Java">private AnimationAttribute animationAttribute;
+</code></pre>
+<p>属性信息，是枚举类，在一些动画效果中允许出现一些属性，您可以根据需要进行设定</p>
+<p>但请务必保证您设置的属性是这个动作中允许被设置的，如果您设置了一个不属于此动作的属性将会自动恢复为默认。</p>
+<p>动画效果和属性对应关系可以参考WPS或Office里面的动画设置窗口</p>
+<p><img src="img/in1.png" alt="in1" /></p>
+<h2 id="timems-持续时长毫秒"><a class="header" href="#timems-持续时长毫秒">timeMs 持续时长毫秒</a></h2>
+<pre><code class="language-Java">private Integer timeMs;
+</code></pre>
+<p>持续时长，单位是毫秒。每一个动画都包含默认持续时长。默认持续时长和Office中此动作的默认持续时长是一致的，如果想和Office保持一致的话一般不需要填写。</p>
+<p>在Office或者WPS等阅读器中，设定为以下毫秒时长会展示为指定的语义文本。推荐您从以下的数值中选择：</p>
+<div class="table-wrapper"><table><thead><tr><th>时长</th><th>标识</th></tr></thead><tbody>
+<tr><td>500</td><td>非常快</td></tr>
+<tr><td>1000</td><td>快速</td></tr>
+<tr><td>2000</td><td>中速</td></tr>
+<tr><td>3000</td><td>慢速</td></tr>
+<tr><td>5000</td><td>非常慢</td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="出场动画outanimation"><a class="header" href="#出场动画outanimation">出场动画——OutAnimation</a></h1>
+<p>OutAnimation表示进场动画，也被称为出现动画。</p>
+<p>所有<code>AnimationElement</code>的子类都拥有进场和出场动画属性。</p>
+<pre><code class="language-Java">private OutAnimation outAnimation;
+</code></pre>
+<p>您可以通过Set或者Get方法对此内容进行修改或读取</p>
+<p>默认值为null，即没有动画。</p>
+<p><strong>暂时不支持设置出场动画，预计在后续版本中将被支持！</strong></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="ppt工具pptutil类"><a class="header" href="#ppt工具pptutil类">PPT工具——PPTUtil类</a></h1>
 <h2 id="ppt转mp4文件"><a class="header" href="#ppt转mp4文件">PPT转MP4文件</a></h2>
 <pre><code class="language-Java">static synchronized void PPT2MP4(String pptPath, String mp4Path)

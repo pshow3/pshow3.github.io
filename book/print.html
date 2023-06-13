@@ -1,0 +1,1024 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>PPTShow</title>
+        <meta name="robots" content="noindex" />
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">开始使用</li><li class="chapter-item expanded "><a href="jieshao.html"><strong aria-hidden="true">1.</strong> 介绍</a></li><li class="chapter-item expanded "><a href="kuaisukaishi.html"><strong aria-hidden="true">2.</strong> 快速开始</a></li><li class="chapter-item expanded "><a href="rumenjiaocheng.html"><strong aria-hidden="true">3.</strong> 入门教程</a></li><li class="chapter-item expanded affix "><li class="part-title">常用对象</li><li class="chapter-item expanded "><a href="pptshow.html"><strong aria-hidden="true">4.</strong> PPT文件</a></li><li class="chapter-item expanded "><a href="pptShowSide.html"><strong aria-hidden="true">5.</strong> PPT页面</a></li><li class="chapter-item expanded "><a href="pptImg.html"><strong aria-hidden="true">6.</strong> PPT图片</a></li><li class="chapter-item expanded "><a href="pptShape.html"><strong aria-hidden="true">7.</strong> PPT图形</a></li><li class="chapter-item expanded "><a href="pptLine.html"><strong aria-hidden="true">8.</strong> PPT线段</a></li><li class="chapter-item expanded "><a href="pptText.html"><strong aria-hidden="true">9.</strong> PPT文本</a></li><li class="chapter-item expanded "><a href="PPTInnerLine.html"><strong aria-hidden="true">10.</strong> PPT文本中的段落</a></li><li class="chapter-item expanded affix "><li class="part-title">通用样式</li><li class="chapter-item expanded "><a href="cutting.html"><strong aria-hidden="true">11.</strong> Cutting裁剪</a></li><li class="chapter-item expanded "><a href="border.html"><strong aria-hidden="true">12.</strong> Border边框</a></li><li class="chapter-item expanded "><a href="shadow.html"><strong aria-hidden="true">13.</strong> Shadow阴影</a></li><li class="chapter-item expanded "><a href="background.html"><strong aria-hidden="true">14.</strong> Background背景</a></li><li class="chapter-item expanded "><a href="gradient.html"><strong aria-hidden="true">15.</strong> Gradient渐变</a></li><li class="chapter-item expanded affix "><li class="part-title">工具类</li><li class="chapter-item expanded "><a href="util.html"><strong aria-hidden="true">16.</strong> PPTUtil</a></li><li class="chapter-item expanded affix "><li class="part-title">关于和反馈</li><li class="chapter-item expanded "><a href="about.html"><strong aria-hidden="true">17.</strong> 关于</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">PPTShow</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="介绍"><a class="header" href="#介绍">介绍</a></h1>
+<p><strong>兄dei，要不要考虑下请我喝杯咖啡！</strong></p>
+<p><strong>微信扫码打赏哦~</strong></p>
+<img src=".\zanshang.png" alt="zanshang" style="zoom: 50%;" />
+<hr />
+<p>PPTShow是一款开源免费的Java生成PPT工具包。</p>
+<p>它在任意系统上完全不依赖其他程序的情况下能够帮助用户使用代码生成PPT文件。</p>
+<p>但是PPT生成图片、PPT生成视频功能是通过调用微软Office实现，所以仅在Windows下可用。</p>
+<h2 id="我们支持"><a class="header" href="#我们支持">我们支持</a></h2>
+<ol>
+<li>在PPT中添加页面；</li>
+<li>在页面中添加文本、图形、线段、图片；</li>
+<li>文本支持分段落文本，支持同一行中出现多种样式的文本；</li>
+<li>支持背景音乐；</li>
+<li>支持PPT页面背景样式设置；</li>
+<li>支持元素和页面动画，元素动画支持顺序调整和时刻设置；</li>
+<li>支持常见的元素样式设置；</li>
+<li>在Windows环境下支持PPT转视频和PPT转图片（请确保已经安装并激活微软Office）</li>
+</ol>
+<h2 id="我们不支持"><a class="header" href="#我们不支持">我们不支持</a></h2>
+<ol>
+<li>
+<p>只能生成pptx文件，不支持生成ppt文件</p>
+</li>
+<li>
+<p>不推荐使用PPTShow读取PPT文件（读取目前还处于demo状态，不适合生产环境使用）</p>
+</li>
+<li>
+<p>暂不支持表格元素</p>
+</li>
+</ol>
+<h2 id="todo"><a class="header" href="#todo">TODO</a></h2>
+<p>我们目前计划中还未开发的有：</p>
+<ol>
+<li>表格元素支持</li>
+<li>嵌入字体支持</li>
+</ol>
+<h2 id="常见问题"><a class="header" href="#常见问题">常见问题</a></h2>
+<p>Q：是否可以用于商业用途？</p>
+<p>A：PPTShow遵循 Apache License 2.0 开源协议允许使用者用于包括但不限于商业使用、个人学习使用的使用用途</p>
+<p>Q：是否可以在Linux环境生成PPT文档？</p>
+<p>A：支持</p>
+<p>Q：PPT生成图片是否会出现中文乱码或者字体变默认情况？</p>
+<p>A：不会出现，我们生成图片是调用的系统Office生成，所以无需担心类似问题</p>
+<p>Q：是否可以设置元素动画顺序？</p>
+<p>A：支持设置顺序，且支持同时出现、上一个动画完成后出现等常见的操作</p>
+<p>Q：PPTShow是否保证可用性或者对因代码问题导致的损失负责？</p>
+<p>A：PPTShow不对项目进行可用性保证，也不对任何损失负责，请开发者使用前自行测试功能</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="快速开始"><a class="header" href="#快速开始">快速开始</a></h1>
+<p>本教程会引导您通过Java代码生成一个包含HelloWorld的PPT文件</p>
+<h3 id="引入jar"><a class="header" href="#引入jar">引入Jar</a></h3>
+<p>您可以通过maven或者手动导入的方式引入jar包</p>
+<h5 id="maven坐标推荐"><a class="header" href="#maven坐标推荐">Maven坐标【推荐】</a></h5>
+<pre><code class="language-xml">&lt;dependency&gt;
+  &lt;groupId&gt;cc.pptshow&lt;/groupId&gt;
+  &lt;artifactId&gt;pptshow&lt;/artifactId&gt;
+  &lt;version&gt;1.3&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<h5 id="下载并手动导入不推荐"><a class="header" href="#下载并手动导入不推荐">下载并手动导入【不推荐】</a></h5>
+<p>下载地址：https://s01.oss.sonatype.org/service/local/repositories/releases/content/cc/pptshow/pptshow/1.3/pptshow-1.3.jar</p>
+<h3 id="编写代码"><a class="header" href="#编写代码">编写代码</a></h3>
+<p>新建一个名为 <code>Main</code>  的 Java class 文件，</p>
+<p>将下面的代码拷贝到项目中之后运行，</p>
+<p>你就获得了包含HelloWorld的PPT文件！</p>
+<pre><code class="language-java">import cc.pptshow.ppt.domain.*;
+import cc.pptshow.ppt.element.impl.*;
+import cc.pptshow.ppt.show.PPTShow;
+import cc.pptshow.ppt.show.PPTShowSide;
+
+public class Main {
+
+   public static void main(String[] args) {
+       //新建一个PPT对象
+       PPTShow pptShow = PPTShow.build();
+       //新建一页PPT
+       PPTShowSide side = PPTShowSide.build();
+       
+       //创建一个行内文本对象，文字设定为Hello World
+       PPTInnerText pptInnerText = PPTInnerText.build(&quot;Hello World&quot;);
+       //创建一个行内文本样式对象，让文本颜色为红色
+       PPTInnerTextCss pptInnerTextCss = PPTInnerTextCss.build().setColor(&quot;FF00000&quot;);
+       //绑定行内文本和样式对象
+       pptInnerText.setCss(pptInnerTextCss);
+       
+       //通过行内文本创建一个行文本对象，并通过行文本对象创建文本对象
+       PPTText pptText = PPTText.build(PPTInnerLine.build(pptInnerText));
+       //在PPT页面中添加文本对象
+       side.add(pptText);
+       //在PPT里面添加PPT页面
+       pptShow.add(side);
+       
+       //输出到文件
+       pptShow.toFile(&quot;C:/Users/qrp19/Desktop/test4.pptx&quot;);
+   }
+
+}
+</code></pre>
+<h2 id="生成文件"><a class="header" href="#生成文件">生成文件</a></h2>
+<p>如果顺利的话，您会获得类似下图的文件</p>
+<p><img src="img/helloworld.png" alt="helloworld" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="入门教程"><a class="header" href="#入门教程">入门教程</a></h1>
+<h2 id="核心思想"><a class="header" href="#核心思想">核心思想</a></h2>
+<p>PPTShow不同于常见的POI等PPT生成程序，PPTShow几乎完全屏蔽了PPT本身底层的XML代码。</p>
+<p>PPTShow认为每一个不可再分的小元素都是一个对象，不同层级的对象间互相嵌套形成了整个PPT。</p>
+<p>比如下图所示，我们认为PPT的整体、不同页面、页面中的各种元素都是一个对象。</p>
+<p><img src="./img/rumen1.png" alt="rumen1" /></p>
+<p>每个元素对象都有一个对应的样式表对象，通过 <code>元素对象.setCss(样式表对象)</code> 的方式就可以实现样式的绑定。</p>
+<div class="table-wrapper"><table><thead><tr><th>元素对象</th><th>元素含义</th><th>样式表对象</th></tr></thead><tbody>
+<tr><td>PPTShowSide</td><td>PPT页面</td><td>PPTSideCss</td></tr>
+<tr><td>PPTImg</td><td>PPT图片</td><td>PPTImgCss</td></tr>
+<tr><td>PPTShape</td><td>PPT图形</td><td>PPTShapeCss</td></tr>
+<tr><td>PPTLine</td><td>PPT线段</td><td>PPTLineCss</td></tr>
+<tr><td>PPTText</td><td>PPT文本</td><td>PPTTextCss</td></tr>
+<tr><td>PPTInnerLine</td><td>PPT文本中的段落</td><td>PPTInnerLineCss</td></tr>
+<tr><td>PPTInnerText</td><td>PPT文本段落中的一个样式最小单元</td><td>PPTInnerTextCss</td></tr>
+</tbody></table>
+</div>
+<h2 id="注意事项"><a class="header" href="#注意事项">注意事项</a></h2>
+<ol>
+<li>PPTShow对象使用完需要<strong>手动调用</strong> <code>close()</code> 方法以删除临时文件</li>
+<li>本项目所有元素对象和样式表对象均实现了 <code>cloneable</code> 接口，且均为<strong>深克隆</strong></li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ppt文件对象pptshow"><a class="header" href="#ppt文件对象pptshow">PPT文件对象——PPTShow</a></h1>
+<p>PPTShow对象代表一个PPT文件，系统会在临时目录构建有关文件的必要组成部分，并在用户指定输出的时候将拼合好的文件输出到指定的位置。</p>
+<p>因此您必须手动执行关闭操作，以删除临时目录文件，否则临时目录文件越堆越多可能导致磁盘空间不足。</p>
+<h2 id="创建pptshow"><a class="header" href="#创建pptshow">创建PPTShow</a></h2>
+<p>您可以通过以下两种方式创建一个PPTShow对象，它们没有任何差别。</p>
+<pre><code class="language-java">PPTShow pptShow = PPTShow.build();
+</code></pre>
+<pre><code class="language-Java">PPTShow pptShow = new PPTShow();
+</code></pre>
+<h2 id="插入一张ppt"><a class="header" href="#插入一张ppt">插入一张PPT</a></h2>
+<p>PPTShowSide是PPT页面对象，在后面的文档中会有提到。</p>
+<p>插入到文档页面末尾：</p>
+<pre><code class="language-Java">void add(PPTShowSide pptShowSide)
+</code></pre>
+<p>插入到文档中间某一页：</p>
+<pre><code class="language-java">/**
+* indexId 表示要插入指定页面的索引，索引从0开始
+*/
+void add(PPTShowSide pptShowSide, int indexId)
+</code></pre>
+<h2 id="生成文件-1"><a class="header" href="#生成文件-1">生成文件</a></h2>
+<p>根据PPTShow内容，生成一个pptx格式的PPT文件</p>
+<pre><code class="language-java">/**
+* path 输出路径，请以.pptx结尾
+*/
+void toFile(String path)
+</code></pre>
+<h2 id="关闭对象"><a class="header" href="#关闭对象">关闭对象</a></h2>
+<p>关闭对象后缓存将被清理，被关闭的对象无法生成文件</p>
+<pre><code class="language-java">void close()
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ppt页面对象pptshowside"><a class="header" href="#ppt页面对象pptshowside">PPT页面对象——PPTShowSide</a></h1>
+<p>PPT页面对象表示一个PPT的页面，一个页面中通常由很多元素组成，很多个页面组成了PPT</p>
+<h2 id="创建对象"><a class="header" href="#创建对象">创建对象</a></h2>
+<p>您可以通过以下两种方式创建一个PPTShowSide对象，它们没有任何差别。</p>
+<pre><code class="language-java">PPTShowSide pptShowSide = PPTShowSide.build();
+</code></pre>
+<pre><code class="language-Java">PPTShowSide pptShowSide = new PPTShowSide();
+</code></pre>
+<h2 id="添加元素"><a class="header" href="#添加元素">添加元素</a></h2>
+<p>元素遵循索引小的元素在下层，索引大的元素在上层</p>
+<h4 id="追加一个元素"><a class="header" href="#追加一个元素">追加一个元素</a></h4>
+<pre><code class="language-Java">void add(PPTElement pptElement)
+</code></pre>
+<h4 id="添加一个索引为指定id的元素"><a class="header" href="#添加一个索引为指定id的元素">添加一个索引为指定id的元素</a></h4>
+<pre><code class="language-Java">/**
+* indexId 表示要插入指定页面的索引，索引从0开始
+*/
+void add(PPTElement pptElement, int indexId)
+</code></pre>
+<h4 id="将list中全部元素都添加进来"><a class="header" href="#将list中全部元素都添加进来">将List中全部元素都添加进来</a></h4>
+<pre><code class="language-Java">void addAll(List&lt;PPTElement&gt; pptElements)
+</code></pre>
+<h2 id="读取元素列表"><a class="header" href="#读取元素列表">读取元素列表</a></h2>
+<p>通过Get方法读取当前元素列表信息</p>
+<pre><code class="language-Java">List&lt;PPTElement&gt; getElements()
+</code></pre>
+<h2 id="修改或读取背景音乐"><a class="header" href="#修改或读取背景音乐">修改或读取背景音乐</a></h2>
+<p>您可以通过 <code>backgroundMusic</code> 属性 来设置幻灯片的背景音乐</p>
+<p>目前仅支持播放到幻灯片结束放映，暂时不支持指定到哪一张幻灯片结束</p>
+<pre><code class="language-Java">/**
+* 背景音乐文件
+*/
+@Getter
+@Setter
+private String backgroundMusic;
+</code></pre>
+<h2 id="设定页面自动换页"><a class="header" href="#设定页面自动换页">设定页面自动换页</a></h2>
+<p>您可以通过 <code>autoPagerTime</code> 属性 设置当前幻灯片自动切换到下一页的时间</p>
+<p>单位：毫秒，默认为0，表示不会自动换页</p>
+<pre><code class="language-Java">/**
+* 自动换页面的时间
+* 单位毫秒，默认为0表示不会自动换页
+*/
+@Getter
+@Setter
+private long autoPagerTime = 0L;
+</code></pre>
+<h2 id="设置切换动画"><a class="header" href="#设置切换动画">设置切换动画</a></h2>
+<p>您可以通过设置 <code>pageSwitchingType</code> 来设定幻灯片切换的动画效果</p>
+<p>默认为切出效果（也就是没有任何样式，直接硬切换）</p>
+<pre><code class="language-Java">private PageSwitchingType pageSwitchingType = PageSwitchingType.DEFAULT;
+</code></pre>
+<p>设定值对应枚举类  <code>PageSwitchingType</code> </p>
+<p>枚举类中包含了幻灯片的动作样式中文名（参数1），您可以自行对照或测试使用。</p>
+<pre><code class="language-Java">DEFAULT(&quot;切出（默认效果）&quot;, PageSwitchingType.DEFAULT_XML),
+SMOOTH(&quot;平滑&quot;, PageSwitchingType.SMOOTH_XML),
+FADE_OUT(&quot;淡出&quot;, PageSwitchingType.FADE_OUT_XML),
+ERASE(&quot;擦除&quot;, PageSwitchingType.ERASE_XML),
+SHAPE(&quot;形状&quot;, PageSwitchingType.SHAPE_XML),
+DISSOLVE(&quot;溶解&quot;, PageSwitchingType.DISSOLVE_XML),
+NEWS_FLASH(&quot;新闻快报&quot;, PageSwitchingType.NEWS_FLASH_XML),
+SPOKES(&quot;轮辐&quot;, PageSwitchingType.SPOKES_XML),
+BLIND(&quot;百叶窗&quot;, PageSwitchingType.BLIND_XML),
+COMB(&quot;梳理&quot;, PageSwitchingType.COMB_XML),
+TAKING(&quot;抽出&quot;, PageSwitchingType.TAKING_XML),
+SEGMENTATION(&quot;分割&quot;, PageSwitchingType.SEGMENTATION_XML),
+LINE(&quot;线条&quot;, PageSwitchingType.LINE_XML),
+BOARD(&quot;棋盘&quot;, PageSwitchingType.BOARD_XML),
+LAUNCH(&quot;推出&quot;, PageSwitchingType.LAUNCH_XML),
+INSERT(&quot;插入&quot;, PageSwitchingType.INSERT_XML),
+PAGE_CURLING(&quot;页面卷曲&quot;, PageSwitchingType.PAGE_CURLING_XML),
+CUBE(&quot;立方体&quot;, PageSwitchingType.CUBE_XML),
+BOX(&quot;框&quot;, PageSwitchingType.BOX_XML),
+PLAIN(&quot;飞机&quot;, PageSwitchingType.PLAIN_XML),
+OPEN_DOOR(&quot;开门&quot;, PageSwitchingType.OPEN_DOOR_XML),
+STRIPPING(&quot;剥离&quot;, PageSwitchingType.STRIPPING_XML),
+RANDOM(&quot;随机&quot;, PageSwitchingType.RANDOM_XML)
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ppt图片pptimg"><a class="header" href="#ppt图片pptimg">PPT图片——PPTImg</a></h1>
+<p>PPTImg对象表示PPT中的图片元素</p>
+<h2 id="创建pptimg"><a class="header" href="#创建pptimg">创建PPTImg</a></h2>
+<p>您可以通过以下两种方式创建一个PPTImg对象，它们没有任何差别。</p>
+<pre><code class="language-java">PPTImg pptImg = PPTImg.build();
+</code></pre>
+<pre><code class="language-Java">PPTImg pptImg = new PPTImg();
+</code></pre>
+<p>您也可以在创建的时候指定图片，有两种方式可以创建PPTImg对象，它们没有任何差别</p>
+<pre><code class="language-Java">PPTImg pptImg = PPTImg.build(String file);
+</code></pre>
+<pre><code class="language-Java">PPTImg pptImg = new PPTImg(String file);
+</code></pre>
+<h2 id="设置图片"><a class="header" href="#设置图片">设置图片</a></h2>
+<p>设置当前PPTImg对象对应的图片是什么，你可以在创建对象的时候直接指定，您也可以在创建后手动调用下面的方法指定嵌入图片路径。</p>
+<p>支持 png、jpg、gif、svg；不支持webp格式</p>
+<p>注意：仅支持本地文件绝对路径，不支持如http开头的在线图片信息！</p>
+<pre><code class="language-Java">PPTImg setFile(String file)
+</code></pre>
+<h2 id="读取图片路径"><a class="header" href="#读取图片路径">读取图片路径</a></h2>
+<p>获取PPTImg对象的图片路径</p>
+<pre><code class="language-Java">String getFile()
+</code></pre>
+<h2 id="设定样式"><a class="header" href="#设定样式">设定样式</a></h2>
+<p>您可以通过 <code>css</code> 属性来设置样式信息，接下来我们将详细讲解 <code>PPTImgCss</code> 属性及含义。</p>
+<pre><code class="language-Java">@Getter
+@Setter
+private PPTImgCss css;
+</code></pre>
+<h2 id="pptimgcss"><a class="header" href="#pptimgcss">PPTImgCss</a></h2>
+<p><code>PPTImg</code> 对应的样式表对象</p>
+<h3 id="left"><a class="header" href="#left">left</a></h3>
+<pre><code class="language-Java">private double left;
+</code></pre>
+<p>距离页面左边距离，单位cm</p>
+<h3 id="top"><a class="header" href="#top">top</a></h3>
+<pre><code class="language-Java">private double top;
+</code></pre>
+<p>距离页面顶边距离，单位cm</p>
+<h3 id="width"><a class="header" href="#width">width</a></h3>
+<pre><code class="language-Java">private double width;
+</code></pre>
+<p>元素宽度，单位cm</p>
+<h3 id="height"><a class="header" href="#height">height</a></h3>
+<pre><code class="language-Java">private double height;
+</code></pre>
+<p>元素高度，单位cm</p>
+<h3 id="cutting"><a class="header" href="#cutting">cutting</a></h3>
+<pre><code class="language-Java">private Cutting cutting;
+</code></pre>
+<p>裁剪样式，请参考【参考文档】-【通用样式】-【Cutting裁剪】</p>
+<h3 id="border"><a class="header" href="#border">border</a></h3>
+<pre><code class="language-Java">private Border border;
+</code></pre>
+<p>边框样式，请参考【参考文档】-【通用样式】-【border边框】</p>
+<h3 id="shadow"><a class="header" href="#shadow">shadow</a></h3>
+<pre><code class="language-Java">private Shadow shadow;
+</code></pre>
+<p>边框样式，请参考【参考文档】-【通用样式】-【shadow阴影】</p>
+<h3 id="name"><a class="header" href="#name">name</a></h3>
+<pre><code class="language-Java">private String name = &quot;图片&quot;;
+</code></pre>
+<p>元素名称，默认为 “图片”，正常放映PPT时看不到此信息</p>
+<p>在设置元素动画等场景下，会在动画窗格里展示元素名称信息</p>
+<p>在同一页幻灯片中允许出现重复name</p>
+<h3 id="describe"><a class="header" href="#describe">describe</a></h3>
+<pre><code class="language-Java">private String describe = &quot;image&quot;;
+</code></pre>
+<p>元素描述，默认为 “image”，正常放映PPT时看不到此信息</p>
+<p>在同一页幻灯片中允许出现重复describe</p>
+<h3 id="angle"><a class="header" href="#angle">angle</a></h3>
+<pre><code class="language-Java">private double angle;
+</code></pre>
+<p>旋转角度，指顺时针旋转角度，默认为0表示不旋转。</p>
+<p>合法取值范围：0 ≤ angle ＜ 360</p>
+<h3 id="removecolor"><a class="header" href="#removecolor">removeColor</a></h3>
+<pre><code class="language-java">private String removeColor;
+</code></pre>
+<p>设置透明色，格式为16进制6字符表示的颜色值，不带 # 号，例：<code>FFFFFF</code> 。</p>
+<p>比如白底图可以设置为白色；此属性对png图片无效</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ppt图形pptshape"><a class="header" href="#ppt图形pptshape">PPT图形——PPTShape</a></h1>
+<p>PPTShape对象表示PPT中的图形元素</p>
+<h2 id="创建pptshape"><a class="header" href="#创建pptshape">创建PPTShape</a></h2>
+<p>您可以通过以下两种方式创建一个PPTImg对象，它们没有任何差别。</p>
+<pre><code class="language-java">PPTShape pptShape = PPTShape.build();
+</code></pre>
+<pre><code class="language-Java">PPTShape pptShape = new PPTShape();
+</code></pre>
+<h2 id="设定样式-1"><a class="header" href="#设定样式-1">设定样式</a></h2>
+<p>您可以通过 <code>css</code> 属性来设置样式信息，接下来我们将详细讲解 <code>PPTImgCss</code> 属性及含义。</p>
+<pre><code class="language-Java">@Getter
+@Setter
+private PPTShapeCss css;
+</code></pre>
+<h2 id="pptshapecss"><a class="header" href="#pptshapecss">PPTShapeCss</a></h2>
+<p><code>PPTShape</code> 对应的样式表对象</p>
+<h3 id="shape"><a class="header" href="#shape">shape</a></h3>
+<pre><code class="language-Java">private Shape shape = new Rect();
+</code></pre>
+<p>图形形状，如果您没有做特殊设置，将默认是直角矩形。</p>
+<p>Shape是一个抽象类，有以下图形实现了它：</p>
+<img src=".\img\shape1.png" alt="shape1" style="zoom:50%;" />
+<h4 id="rect-直角矩形"><a class="header" href="#rect-直角矩形">Rect 直角矩形</a></h4>
+<p>直角矩形没有更多可供设置的参数</p>
+<p>当且仅当设定width和height相同的时候展示为正方形</p>
+<h4 id="ellipse-椭圆"><a class="header" href="#ellipse-椭圆">Ellipse 椭圆</a></h4>
+<p>椭圆形没有更多可供设置的参数</p>
+<p>当且仅当设定width和height相同的时候展示为正圆形</p>
+<h4 id="roundrect-圆角矩形"><a class="header" href="#roundrect-圆角矩形">RoundRect 圆角矩形</a></h4>
+<p>可以通过get和set方法设置圆角范围参数，允许的范围是0 - 50，表示0%-50%</p>
+<pre><code class="language-Java">private double fillet;
+</code></pre>
+<img src=".\img\shape2.png" alt="shape2" style="zoom:50%;" />
+<h4 id="parallelogram-平行四边形"><a class="header" href="#parallelogram-平行四边形">Parallelogram 平行四边形</a></h4>
+<p>可以通过get和set方法设置平行四边形的倾斜程度，允许的范围是0-100，表示0% - 100%</p>
+<pre><code class="language-Java">private double fillet;
+</code></pre>
+<img src="C:\Users\qrp19\Desktop\新建文件夹\docs\src\img\shape3.png" alt="shape3" style="zoom:50%;" />
+<h4 id="selfshape-自定义图形"><a class="header" href="#selfshape-自定义图形">SelfShape 自定义图形</a></h4>
+<p>系统未实现的图形临时解决方案，不推荐使用</p>
+<pre><code class="language-Java">/**
+* 用户自己定义的一段XML
+*/
+private String custGeom;
+</code></pre>
+<p>用户自定义一段XML来确定图形信息，内容会直接写入文件，不会进行除非空外的任何合法性校验</p>
+<h3 id="left-1"><a class="header" href="#left-1">left</a></h3>
+<pre><code class="language-Java">private double left;
+</code></pre>
+<p>距离页面左边距离，单位cm</p>
+<h3 id="top-1"><a class="header" href="#top-1">top</a></h3>
+<pre><code class="language-Java">private double top;
+</code></pre>
+<p>距离页面顶边距离，单位cm</p>
+<h3 id="width-1"><a class="header" href="#width-1">width</a></h3>
+<pre><code class="language-Java">private double width;
+</code></pre>
+<p>元素宽度，单位cm</p>
+<h3 id="height-1"><a class="header" href="#height-1">height</a></h3>
+<pre><code class="language-Java">private double height;
+</code></pre>
+<p>元素高度，单位cm</p>
+<h3 id="background"><a class="header" href="#background">background</a></h3>
+<pre><code class="language-Java">private Background background;
+</code></pre>
+<p>背景样式，请参考【参考文档】-【通用样式】-【background背景】</p>
+<h3 id="border-1"><a class="header" href="#border-1">border</a></h3>
+<pre><code class="language-Java">private Border border;
+</code></pre>
+<p>边框样式，请参考【参考文档】-【通用样式】-【border边框】</p>
+<h3 id="name-1"><a class="header" href="#name-1">name</a></h3>
+<pre><code class="language-Java">private String name = &quot;图片&quot;;
+</code></pre>
+<p>元素名称，默认为 “图形”，正常放映PPT时看不到此信息</p>
+<p>在设置元素动画等场景下，会在动画窗格里展示元素名称信息</p>
+<p>在同一页幻灯片中允许出现重复name</p>
+<h3 id="angle-1"><a class="header" href="#angle-1">angle</a></h3>
+<pre><code class="language-Java">private double angle;
+</code></pre>
+<p>旋转角度，指顺时针旋转角度，默认为0表示不旋转。</p>
+<p>合法取值范围：0 ≤ angle ＜ 360</p>
+<h3 id="flipx"><a class="header" href="#flipx">flipX</a></h3>
+<pre><code class="language-java">private boolean flipX;
+</code></pre>
+<p>是否进行水平翻转，默认不进行翻转</p>
+<h3 id="flipy"><a class="header" href="#flipy">flipY</a></h3>
+<pre><code class="language-Java">private boolean flipY
+</code></pre>
+<p>是否进行垂直翻转，默认不进行翻转</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ppt线段pptline"><a class="header" href="#ppt线段pptline">PPT线段——PPTLine</a></h1>
+<p>PPTLine表示PPT中的线段元素</p>
+<h2 id="创建pptline"><a class="header" href="#创建pptline">创建PPTLine</a></h2>
+<p>您可以通过以下方式创建一个PPTLine对象</p>
+<pre><code class="language-Java">PPTLine pptLine = new PPTLine();
+</code></pre>
+<h2 id="设定样式-2"><a class="header" href="#设定样式-2">设定样式</a></h2>
+<p>您可以通过 <code>css</code> 属性来设置样式信息，接下来我们将详细讲解 <code>PPTImgCss</code> 属性及含义。</p>
+<pre><code class="language-Java">@Getter
+@Setter
+private PPTLineCss css;
+</code></pre>
+<h2 id="pptlinecss"><a class="header" href="#pptlinecss">PPTLineCss</a></h2>
+<p><code>PPTLine</code> 对应的样式表对象</p>
+<h3 id="left-2"><a class="header" href="#left-2">left</a></h3>
+<pre><code class="language-Java">private double left;
+</code></pre>
+<p>距离页面左边距离，单位cm</p>
+<h3 id="top-2"><a class="header" href="#top-2">top</a></h3>
+<pre><code class="language-Java">private double top;
+</code></pre>
+<p>距离页面顶边距离，单位cm</p>
+<h3 id="color"><a class="header" href="#color">color</a></h3>
+<pre><code class="language-Java">private String color = &quot;333333&quot;;
+</code></pre>
+<p>线段颜色，16进制颜色，不带 # 号</p>
+<p>默认为 <code>333333</code></p>
+<h3 id="linewidth"><a class="header" href="#linewidth">lineWidth</a></h3>
+<pre><code class="language-Java">private double lineWidth = 0.5;
+</code></pre>
+<p>线段的宽度，单位磅，默认0.5磅</p>
+<img src=".\img\line1.png" alt="line1" style="zoom:67%;" />
+<h3 id="width-2"><a class="header" href="#width-2">width</a></h3>
+<pre><code class="language-Java">private double width;
+</code></pre>
+<p>元素宽度，单位cm，竖线宽度必须设为0</p>
+<img src=".\img\line2.png" alt="line2" style="zoom:50%;" />
+<h3 id="height-2"><a class="header" href="#height-2">height</a></h3>
+<pre><code class="language-Java">private double height;
+</code></pre>
+<p>元素高度，单位cm，横线高度必须设为0</p>
+<h3 id="type"><a class="header" href="#type">type</a></h3>
+<pre><code class="language-Java">private LineType type = LineType.LINE;
+</code></pre>
+<p>线段的方向，默认线段从左上角的顶点连接到右下角的顶点</p>
+<p>如果需要从右上角连接到左下角，请设置参数为：<code>LineType.TOP_RIGHT_BOTTOM_LEFT</code></p>
+<img src=".\img\line3.png" alt="line3" style="zoom:50%;" />
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ppt文本ppttext"><a class="header" href="#ppt文本ppttext">PPT文本——PPTText</a></h1>
+<p><code>PPTText</code>表示PPT文本元素，注意是文本元素整体，而非其中的一部分，比如下图中的虚线框区域就是一个PPT文本</p>
+<p><img src="img/text1.png" alt="text1" /></p>
+<p>如果我们希望在一个<code>PPTText</code>对象中包含不同段落，如上图效果，其中包含了两个段落，分别是：<code>PPTShow is a free open source Java native generation of PPT toolkit.</code>  和  <code>support the 2010 version of the new features of PPT , does not rely on any third-party components , Linux, Windows can be used smoothly .</code> </p>
+<p>其中每一个段落都是一个 <code>PPTInnerLine</code> 对象。</p>
+<p>段落中还可能存在多种文本呈现样式，它们紧密挨在一起，没有换行。</p>
+<p>比如  <code>2010 version</code> 和前后文本就存在差异，此时相当于一个 <code>PPTInnerLine</code>对象包含了三个 <code>PPTInnerText</code> 对象，其中第一个和第三个样式相同，第二个有加粗和红色特殊效果。（如下图所示，每个线框部分都代表一个 <code>PPTInnerText</code>  对象）</p>
+<p><img src="img/text2.png" alt="text2" /></p>
+<h2 id="创建ppttext"><a class="header" href="#创建ppttext">创建PPTText</a></h2>
+<p>您可以通过以下方式创建一个<code>PPTText</code>对象，两种方式没有任何差别：</p>
+<pre><code class="language-Java">PPTText pptText = new PPTText();
+</code></pre>
+<pre><code class="language-Java">PPTText pptText = PPTText.build();
+</code></pre>
+<p>您还可以在创建的时候直接绑定<code>PPTInnerLine</code>对象集合：</p>
+<p>只有一个<code>PPTInnerLine</code>时，可以使用以下方式创建 <code>PPTText</code> 对象，两种方式没有任何差别：</p>
+<pre><code class="language-Java">PPTText pptText = new PPTText(PPTInnerLine line);
+</code></pre>
+<pre><code class="language-Java">PPTText pptText = PPTText.build(PPTInnerLine line);
+</code></pre>
+<p>有多个的时候，可以使用以下方式创建 <code>PPTText</code> 对象，两种方式没有任何差别：</p>
+<pre><code class="language-Java">PPTText pptText = new PPTText(List&lt;PPTInnerLine&gt; lineList);
+</code></pre>
+<pre><code class="language-Java">PPTText pptText = PPTText.build(List&lt;PPTInnerLine&gt; textList);
+</code></pre>
+<p>你还可以在创建的时候直接绑定样式文件：</p>
+<pre><code class="language-Java">PPTText pptText = new PPTText(PPTInnerLine line, PPTTextCss css);
+</code></pre>
+<pre><code class="language-Java">PPTText pptText = PPTText.build(PPTInnerLine line, PPTTextCss css);
+</code></pre>
+<pre><code class="language-Java">PPTText pptText = new PPTText(List&lt;PPTInnerLine&gt; lineList, PPTTextCss css);
+</code></pre>
+<pre><code class="language-Java">PPTText pptText = PPTText.build(List&lt;PPTInnerLine&gt; textList, PPTTextCss css);
+</code></pre>
+<h2 id="获取最小宽度"><a class="header" href="#获取最小宽度">获取最小宽度</a></h2>
+<pre><code class="language-Java">double findMinWidthSize()
+</code></pre>
+<p>在每一个段落都不折行的情况下，最小需要的宽度</p>
+<h2 id="获取最小高度"><a class="header" href="#获取最小高度">获取最小高度</a></h2>
+<pre><code class="language-Java">double findMinHeightSize()
+</code></pre>
+<p>获取当前宽度下，最小需要的高度值。</p>
+<p>实际上即便是设定的样式中高度比最小高度小，文本也会自动溢出显示，不会影响展示。</p>
+<h2 id="获取全部文本"><a class="header" href="#获取全部文本">获取全部文本</a></h2>
+<pre><code class="language-Java">String findAllText()
+</code></pre>
+<p>获取文本对象所有段落、所有段落内文本中的全部文本信息。</p>
+<p>返回信息包含换行符，可以用换行符区分段落信息，但段落内文本无法区分出来。</p>
+<p>举例：</p>
+<p><img src="img/text3.png" alt="text3" /></p>
+<p>上图 <code>PPTText</code> 对象调用 <code>findAllText()</code> 方法后会获得如下文本：</p>
+<pre><code>PPTShow is a free open source Java native generation of PPT toolkit.
+support the 2010 version of the new features of PPT. 
+</code></pre>
+<h2 id="添加段落"><a class="header" href="#添加段落">添加段落</a></h2>
+<p>在结尾处追加一个段落：</p>
+<pre><code class="language-Java">PPTText add(PPTInnerLine text)
+</code></pre>
+<p>在结尾处追加多个段落：</p>
+<pre><code class="language-Java">PPTText addAll(Collection&lt;PPTInnerLine&gt; text)
+</code></pre>
+<p>您也可以直接取出段落List对象自行修改操作，支持get和set操作</p>
+<pre><code class="language-Java">@Setter
+@Getter
+private List&lt;PPTInnerLine&gt; lineList = Lists.newArrayList();
+</code></pre>
+<h2 id="设定样式-3"><a class="header" href="#设定样式-3">设定样式</a></h2>
+<p>您可以通过 <code>css</code> 属性来设置样式信息，接下来我们将详细讲解 <code>PPTTextCss</code> 属性及含义。</p>
+<pre><code class="language-Java">@Getter
+@Setter
+private PPTTextCss css;
+</code></pre>
+<h2 id="ppttextcss"><a class="header" href="#ppttextcss">PPTTextCss</a></h2>
+<p><code>PPTText</code> 对应的样式表对象</p>
+<h3 id="left-3"><a class="header" href="#left-3">left</a></h3>
+<pre><code class="language-Java">private double left;
+</code></pre>
+<p>距离页面左边距离，单位：cm</p>
+<h3 id="top-3"><a class="header" href="#top-3">top</a></h3>
+<pre><code class="language-Java">private double top;
+</code></pre>
+<p>距离页面顶边距离，单位：cm</p>
+<h3 id="width-3"><a class="header" href="#width-3">width</a></h3>
+<pre><code class="language-Java">private double width;
+</code></pre>
+<p>元素宽度，单位：cm，默认为最小宽度</p>
+<h3 id="height-3"><a class="header" href="#height-3">height</a></h3>
+<pre><code class="language-Java">private double height;
+</code></pre>
+<p>元素高度，单位：cm，默认为最小高度</p>
+<h3 id="lineheight"><a class="header" href="#lineheight">lineHeight</a></h3>
+<pre><code class="language-Java">private double lineHeight;
+</code></pre>
+<p>行高，单位：倍行距，默认为1</p>
+<h3 id="background-1"><a class="header" href="#background-1">background</a></h3>
+<pre><code class="language-Java">private Background background
+</code></pre>
+<p>背景样式，请参考【参考文档】-【通用样式】-【background背景】</p>
+<h3 id="angle-2"><a class="header" href="#angle-2">angle</a></h3>
+<pre><code class="language-Java">private double angle;
+</code></pre>
+<p>旋转角度，指顺时针旋转角度，默认为0表示不旋转。</p>
+<p>合法取值范围：0 ≤ angle ＜ 360</p>
+<h3 id="name-2"><a class="header" href="#name-2">name</a></h3>
+<pre><code class="language-Java">private String name = &quot;文本&quot;;
+</code></pre>
+<p>元素名称，默认为 “文本”，正常放映PPT时看不到此信息</p>
+<p>在设置元素动画等场景下，会在动画窗格里展示元素名称信息</p>
+<p>在同一页幻灯片中允许出现重复name</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ppt文本中的段落pptinnerline"><a class="header" href="#ppt文本中的段落pptinnerline">PPT文本中的段落——PPTInnerLine</a></h1>
+<p>有关 <code>PPTText</code> 、 <code>PPTInnerLine</code>、<code>PPTInnerText</code>的关系，请参考<code>PPTText</code>的文档</p>
+<h2 id="创建pptinnerline"><a class="header" href="#创建pptinnerline">创建PPTInnerLine</a></h2>
+<p>您可以通过以下方式创建一个<code>PPTInnerLine</code>对象，两种方式没有任何差别：</p>
+<pre><code class="language-Java">PPTInnerLine pptInnerLine = new PPTInnerLine();
+</code></pre>
+<pre><code class="language-Java">PPTInnerLine pptInnerLine = PPTInnerLine.build();
+</code></pre>
+<p>您还可以直接快速创建空行对象：</p>
+<pre><code class="language-Java">PPTInnerLine pptInnerLine = PPTInnerLine buildEmptyLine();
+</code></pre>
+<pre><code class="language-Java">/** 
+* num：空几行
+*/
+PPTInnerLine pptInnerLine = PPTInnerLine buildEmptyLine(int num);
+</code></pre>
+<p>您还可以在创建的时候直接绑定<code>PPTInnerText</code>对象集合：</p>
+<p>只有一个<code>PPTInnerText</code>时，可以使用以下方式创建 <code>PPTInnerLine</code> 对象，两种方式没有任何差别：</p>
+<pre><code class="language-Java">PPTInnerLine pptInnerLine = new PPTInnerLine(PPTInnerText text);
+</code></pre>
+<pre><code class="language-Java">PPTInnerLine pptInnerLine = PPTInnerLine.build(PPTInnerText text);
+</code></pre>
+<p>有多个的时候，可以使用以下方式创建 <code>PPTInnerLine</code> 对象，两种方式没有任何差别：</p>
+<pre><code class="language-Java">PPTInnerLine pptInnerLine = new PPTInnerLine(List&lt;PPTInnerText&gt; textList);
+</code></pre>
+<pre><code class="language-Java">PPTInnerLine pptInnerLine = PPTInnerLine.build(List&lt;PPTInnerText&gt; textList);
+</code></pre>
+<p>你还可以在创建的时候直接绑定样式文件：有任何差别：</p>
+<pre><code class="language-Java">PPTInnerLine pptInnerLine = new PPTInnerLine(PPTInnerText text, PPTInnerLineCss css);
+</code></pre>
+<pre><code class="language-Java">PPTInnerLine pptInnerLine = PPTInnerLine.build(PPTInnerText text, PPTInnerLineCss css);
+</code></pre>
+<pre><code class="language-Java">PPTInnerLine pptInnerLine = new PPTInnerLine(List&lt;PPTInnerText&gt; textList, PPTInnerLineCss css);
+</code></pre>
+<pre><code class="language-Java">PPTInnerLine pptInnerLine = PPTInnerLine.build(List&lt;PPTInnerText&gt; textList, PPTInnerLineCss css);
+</code></pre>
+<h2 id="添加段内文本"><a class="header" href="#添加段内文本">添加段内文本</a></h2>
+<p>在结尾处追加一个段落：</p>
+<pre><code class="language-Java">PPTInnerLine add(PPTInnerText text)
+</code></pre>
+<p>在结尾处追加多个段落：</p>
+<pre><code class="language-Java">PPTInnerLine addAll(Collection&lt;PPTInnerText&gt; text)
+</code></pre>
+<p>您也可以直接取出段落List对象自行修改操作，支持get和set操作</p>
+<pre><code class="language-Java">@Setter
+@Getter
+private List&lt;PPTInnerText&gt; textList = Lists.newArrayList();
+</code></pre>
+<h2 id="设定样式-4"><a class="header" href="#设定样式-4">设定样式</a></h2>
+<p>您可以通过 <code>css</code> 属性来设置样式信息，接下来我们将详细讲解 <code>PPTInnerLineCss</code> 属性及含义。</p>
+<pre><code class="language-Java">@Getter
+@Setter
+private PPTInnerLineCss css;
+</code></pre>
+<h2 id="pptinnerlinecss"><a class="header" href="#pptinnerlinecss">PPTInnerLineCss</a></h2>
+<p><code>PPTInnerLine</code> 对应的样式表对象</p>
+<h3 id="lineheight-1"><a class="header" href="#lineheight-1">lineHeight</a></h3>
+<pre><code class="language-Java">private double lineHeight;
+</code></pre>
+<p>行高，单位：倍行距，默认为1</p>
+<h3 id="align"><a class="header" href="#align">align</a></h3>
+<pre><code class="language-Java">private String align = PPTNameConstant.ALIGN_LEFT;
+</code></pre>
+<p>对齐方式，存在以下对齐方式</p>
+<ul>
+<li><code>PPTNameConstant.ALIGN_LEFT</code> 左对齐</li>
+<li><code>PPTNameConstant.ALIGN_RIGHT</code> 右对齐</li>
+<li><code>PPTNameConstant.ALIGN_CENTER</code> 居中对齐</li>
+<li><code>PPTNameConstant.ALIGN_JUST</code> 两端对齐</li>
+<li><code>PPTNameConstant.ALIGN_DIST</code> 分散对齐</li>
+</ul>
+<p>五种类型对应下图画圈的部分，图中从左到右顺序即为上方顺序</p>
+<p><img src=".%5Cimg%5Ctext4.png" alt="text4" /></p>
+<h2 id="特别说明"><a class="header" href="#特别说明">特别说明</a></h2>
+<p>实际上每一行都有一个end对象，用户可以get或者set：</p>
+<pre><code class="language-Java">private PPTInnerTextEnd end
+</code></pre>
+<p>它表示行尾信息，我们十分不推荐使用者自定设定有关参数，系统会自动添加行尾对象。</p>
+<p>如果您不完全明白其中参数含义，请不要手动修改，如果认为当前有功能无法实现推荐提issues解决！</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="裁剪cutting"><a class="header" href="#裁剪cutting">裁剪——Cutting</a></h1>
+<p>Cutting对象表示对元素进行剪裁，形成指定的形状</p>
+<h2 id="创建cutting"><a class="header" href="#创建cutting">创建Cutting</a></h2>
+<p>您可以通过以下两种方式创建一个Cutting对象，它们没有任何差别。</p>
+<pre><code class="language-java">Cutting cutting = Cutting.build();
+</code></pre>
+<pre><code class="language-Java">Cutting cutting = new Cutting();
+</code></pre>
+<h2 id="left-4"><a class="header" href="#left-4">left</a></h2>
+<pre><code class="language-Java">private double left;
+</code></pre>
+<p>剪切掉左侧部分的百分比 0-100</p>
+<h2 id="top-4"><a class="header" href="#top-4">top</a></h2>
+<pre><code class="language-Java">private double top;
+</code></pre>
+<p>剪切掉顶侧部分的百分比 0-100</p>
+<h2 id="right"><a class="header" href="#right">right</a></h2>
+<pre><code class="language-Java">private double right;
+</code></pre>
+<p>剪切掉右侧部分的百分比 0-100</p>
+<h2 id="bottom"><a class="header" href="#bottom">bottom</a></h2>
+<pre><code class="language-Java">private double bottom;
+</code></pre>
+<p>剪切掉底侧部分的百分比 0-100</p>
+<h2 id="cutshape"><a class="header" href="#cutshape">cutShape</a></h2>
+<p>您可以通过 <code>cutShape</code> 属性来设置裁剪的形状</p>
+<p>默认为直角矩形</p>
+<pre><code class="language-Java">private CutShape cutShape = new RectCutShape();
+</code></pre>
+<p>有以下类实现了CutShape：</p>
+<h3 id="roundrectcutshape-圆角矩形裁剪"><a class="header" href="#roundrectcutshape-圆角矩形裁剪">RoundRectCutShape 圆角矩形裁剪</a></h3>
+<pre><code class="language-Java">private double fillet;
+</code></pre>
+<p>圆角比例，最小值是0最大值是50</p>
+<p>因为一个叫弯曲50%长度了，两个角加一块就已经100%了</p>
+<h3 id="ellipsecutshape-椭圆裁剪"><a class="header" href="#ellipsecutshape-椭圆裁剪">EllipseCutShape 椭圆裁剪</a></h3>
+<p>椭圆裁剪不支持自定义参数</p>
+<h3 id="rectcutshape-直角矩形裁剪"><a class="header" href="#rectcutshape-直角矩形裁剪">RectCutShape 直角矩形裁剪</a></h3>
+<p>直角矩形裁剪不支持自定义参数</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="边框border"><a class="header" href="#边框border">边框——Border</a></h1>
+<p>Border对象表示边框，是一个抽象类，使用的时候请使用下面的颜色边框或者渐变边框类</p>
+<h2 id="colorborder-颜色边框"><a class="header" href="#colorborder-颜色边框">ColorBorder 颜色边框</a></h2>
+<p>单一颜色边框对象，您可以通过new方法创建一个ColorBorder对象</p>
+<h3 id="color-颜色"><a class="header" href="#color-颜色">Color 颜色</a></h3>
+<pre><code class="language-Java">private String color = &quot;000000&quot;;
+</code></pre>
+<p>设定颜色，16位颜色信息，不包含 # ，默认为黑色</p>
+<h3 id="width-宽度"><a class="header" href="#width-宽度">width 宽度</a></h3>
+<pre><code class="language-Java">private double width = 1.0;
+</code></pre>
+<p>设定宽度，单位是磅，默认为1.0</p>
+<h2 id="gradientborder-渐变边框"><a class="header" href="#gradientborder-渐变边框">GradientBorder 渐变边框</a></h2>
+<p>边框宽度固定，颜色渐变的场景</p>
+<h3 id="width-宽度-1"><a class="header" href="#width-宽度-1">width 宽度</a></h3>
+<pre><code class="language-Java">private double width = 1.0;
+</code></pre>
+<p>设定宽度，单位是磅，默认为1.0</p>
+<h3 id="gradientdirection-角度"><a class="header" href="#gradientdirection-角度">gradientDirection 角度</a></h3>
+<pre><code class="language-Java">private double gradientDirection = 90;
+</code></pre>
+<p>设定角度，默认为90度，角度效果请参考WPS或者微软Office中渐变角度和颜色的效果</p>
+<h3 id="gradients-渐变色列表"><a class="header" href="#gradients-渐变色列表">gradients 渐变色列表</a></h3>
+<pre><code class="language-Java">private List&lt;Gradient&gt; gradients = Lists.newArrayList();
+</code></pre>
+<p>存储渐变色对象，请参考【参考文档】-【通用样式】-【Gradient渐变】查看此对象设置方法</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="阴影shadow"><a class="header" href="#阴影shadow">阴影——Shadow</a></h1>
+<p>Shadow对象表示阴影，是新版本ppt才有的一个功能</p>
+<h2 id="color-颜色-1"><a class="header" href="#color-颜色-1">Color 颜色</a></h2>
+<pre><code class="language-Java">private String color = &quot;000000&quot;;
+</code></pre>
+<p>设定颜色，16位颜色信息，不包含 # ，默认为黑色</p>
+<h2 id="alpha-透明度"><a class="header" href="#alpha-透明度">alpha 透明度</a></h2>
+<pre><code class="language-Java">private double alpha = 0;
+</code></pre>
+<p>设定透明度，数值越大越透明，默认是0，不透明</p>
+<h2 id="sizex-横向大小"><a class="header" href="#sizex-横向大小">sizeX 横向大小</a></h2>
+<pre><code class="language-Java">private double sizeX = 100;
+</code></pre>
+<p>阴影横向大小，百分比形式，默认和原始元素大小一致</p>
+<h2 id="sizey-纵向大小"><a class="header" href="#sizey-纵向大小">sizeY 纵向大小</a></h2>
+<pre><code class="language-Java">private double sizeY = 100;
+</code></pre>
+<p>阴影纵向大小，百分比形式，默认和原始元素大小一致</p>
+<h3 id="distance-距离"><a class="header" href="#distance-距离">distance 距离</a></h3>
+<pre><code class="language-Java">private double distance = 5;
+</code></pre>
+<p>设定距离，单位是磅，默认是5磅</p>
+<h3 id="blur-模糊"><a class="header" href="#blur-模糊">blur 模糊</a></h3>
+<pre><code class="language-Java">private double blur = 10;
+</code></pre>
+<p>边缘模糊程度，单位是磅，默认是10磅</p>
+<h3 id="angle-角度"><a class="header" href="#angle-角度">angle 角度</a></h3>
+<pre><code class="language-Java">private double angle = 0;
+</code></pre>
+<p>阴影投射角度，默认是0</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="背景background"><a class="header" href="#背景background">背景——Background</a></h1>
+<p>Background是一个抽象类，表示元素的背景，使用时请使用它的实现类</p>
+<h2 id="colorbackground-纯色背景"><a class="header" href="#colorbackground-纯色背景">ColorBackGround 纯色背景</a></h2>
+<p>表示某一个颜色的单色背景</p>
+<h3 id="color-颜色-2"><a class="header" href="#color-颜色-2">color 颜色</a></h3>
+<pre><code class="language-Java">private String color;
+</code></pre>
+<p>16禁止颜色值，不带#号，无默认值</p>
+<h3 id="alpha-透明度-1"><a class="header" href="#alpha-透明度-1">alpha 透明度</a></h3>
+<pre><code class="language-Java">private Double alpha;
+</code></pre>
+<p>支持数值 0 - 100，数字越大越透明，默认不透明</p>
+<h2 id="imgbackground-图片背景"><a class="header" href="#imgbackground-图片背景">ImgBackground 图片背景</a></h2>
+<p>表示使用一个图片作为背景</p>
+<h3 id="img-图片"><a class="header" href="#img-图片">img 图片</a></h3>
+<pre><code class="language-Java">private String img;
+</code></pre>
+<p>图片路径，支持png、jpg、gif</p>
+<p>图片会被强制拉伸，建议提前根据元素大小进行裁剪</p>
+<h2 id="gradientbackground-渐变背景"><a class="header" href="#gradientbackground-渐变背景">GradientBackground 渐变背景</a></h2>
+<p>表示以多种颜色渐变的形式作为元素的背景</p>
+<h3 id="gradientdirection-渐变角度"><a class="header" href="#gradientdirection-渐变角度">gradientDirection 渐变角度</a></h3>
+<pre><code class="language-Java">private Double gradientDirection;
+</code></pre>
+<p>支持0-360，默认角度为0</p>
+<h3 id="gradients-渐变色列表-1"><a class="header" href="#gradients-渐变色列表-1">gradients 渐变色列表</a></h3>
+<pre><code class="language-Java">private List&lt;Gradient&gt; gradients = Lists.newArrayList();
+</code></pre>
+<p>存储渐变色对象，请参考【参考文档】-【通用样式】-【Gradient渐变】查看此对象设置方法</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="渐变节点gradient"><a class="header" href="#渐变节点gradient">渐变节点——Gradient</a></h1>
+<p>Gradient对象表示渐变过程的某一个渐变节点，系统会根据相邻的两个渐变节点的属性补全中间的颜色过渡，形成渐变效果</p>
+<h2 id="color-颜色-3"><a class="header" href="#color-颜色-3">Color 颜色</a></h2>
+<pre><code class="language-Java">private String color;
+</code></pre>
+<p>颜色信息，16进制的颜色值信息，不带#号</p>
+<h2 id="proportion"><a class="header" href="#proportion">proportion</a></h2>
+<pre><code class="language-Java">private double proportion;
+</code></pre>
+<p>占比位置，取值范围：0-100</p>
+<h2 id="alpha"><a class="header" href="#alpha">alpha</a></h2>
+<pre><code class="language-Java">private Double alpha;
+</code></pre>
+<p>透明度，取值范围：:0-100，数字越大越透明</p>
+<h2 id="lum"><a class="header" href="#lum">lum</a></h2>
+<pre><code class="language-Java">private Double lum;
+</code></pre>
+<p>亮度，0-100，数字越大越暗</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ppt工具pptutil类"><a class="header" href="#ppt工具pptutil类">PPT工具——PPTUtil类</a></h1>
+<h2 id="ppt转mp4文件"><a class="header" href="#ppt转mp4文件">PPT转MP4文件</a></h2>
+<pre><code class="language-Java">static synchronized void PPT2MP4(String pptPath, String mp4Path)
+</code></pre>
+<p>pptPath：PPT文件路径</p>
+<p>mp4Path：需要生成的mp4文件路径</p>
+<p>目前存在两个PPT同时生成视频vbs脚本无法支持的问题，所以新版本强行加了一个锁，目前待解决。</p>
+<p>注意：</p>
+<ol>
+<li>系统必须已经安装并激活微软的Office</li>
+<li>仅限Windows系统</li>
+<li>生成过程可能存在Office软件出现异常导致无法转换的可能</li>
+</ol>
+<h2 id="压缩mp4文件"><a class="header" href="#压缩mp4文件">压缩MP4文件</a></h2>
+<pre><code class="language-Java">static void mp4Compression(String bigMp4Path, String smallMp4Path)
+</code></pre>
+<p>bigMp4Path：PPT2MP4方法生成的MP4文件</p>
+<p>smallMp4Path：缩小后的文件储存路径，.mp4结尾，不支持覆盖写入，必须此路径不存在文件</p>
+<p>压缩生成的MP4文件，自动压缩为1280x720大小15帧的视频，一般25页PPT视频压缩后在20MB左右</p>
+<p>注意：</p>
+<pre><code>1. 必须电脑安装了ffmeng，且添加了环境变量
+1. 暂不支持调整参数
+</code></pre>
+<h2 id="ppt转png图片"><a class="header" href="#ppt转png图片">PPT转PNG图片</a></h2>
+<pre><code class="language-Java">static void PPT2PNG(String pptPath, String pngPath)
+</code></pre>
+<p>pptPath：PPT文件路径</p>
+<p>pngPath：生成图片存储路径</p>
+<p>调用此方法会生成一个文件夹，文件夹里面每张PPT生成一张图片</p>
+<h2 id="ppt拼长图"><a class="header" href="#ppt拼长图">PPT拼长图</a></h2>
+<pre><code class="language-Java">static void png2LongImg(String pngPath, String longImgPath, String waterImgPath)
+</code></pre>
+<p>pngPath：PPT2PNG方法生成的图片文件夹路径，不能包含其他非本次生成的图片文件，否则会出错</p>
+<p>longImgPath：长图存储地址，.jpg结尾</p>
+<p>waterImgPath：水印文件，会随机贴在长图上，暂时不支持无水印生成</p>
+<p>生成如下效果图片：</p>
+<img src="./img/0010d75d-368f-4a81-bbca-e0a9fb8039f3.jpg" alt="0010d75d-368f-4a81-bbca-e0a9fb8039f3" style="zoom: 33%;" />
+<p>如果总页数是双数，小图第一个会出现首页；如果总页数是单数，小图第一个不会出现首页。</p>
+<h2 id="是否是windows电脑"><a class="header" href="#是否是windows电脑">是否是Windows电脑</a></h2>
+<pre><code class="language-Java">static boolean isWindows()
+</code></pre>
+<p>因为好几个方法只支持Windows电脑，建议在调用前进行判断。</p>
+<p>如果非Windows电脑调用上面几个仅限Windows电脑可用的方法，会直接抛出异常。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="关于"><a class="header" href="#关于">关于</a></h1>
+<p>项目名称：PPTShow</p>
+<p>Git代码地址：（欢迎点个Star呀！）</p>
+<p>​              <a href="https://gitee.com/qiruipeng/pptshow">pptshow在Gitee</a> </p>
+<p>项目官网：<a href="https://pptshow.cc/">PPTShow官网</a></p>
+<p>提交issues：<a href="https://gitee.com/qiruipeng/pptshow/issues">Gitee中文提交</a></p>
+<p>查看使用协议：<a href="https://gitee.com/qiruipeng/pptshow/blob/master/LICENSE">Apache License 2.0</a></p>
+<hr />
+<p>开发者：beihem</p>
+<p>联系我：qiruipeng@88.com</p>
+<hr />
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </div>
+    </body>
+</html>

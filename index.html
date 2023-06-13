@@ -1,4 +1,180 @@
-<center>
-    <h1>PPTShow is coming</h1>
-    <a href="https://gitee.com/qiruipeng/pptshow">PPTShow in Gitee</a>
-</center>
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PPTShow——Java生成PPT的开源工具包</title>
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/index.js?2"></script>
+</head>
+
+<body>
+<div class="head">
+    <div class="head-main">
+        <div class="logo"></div>
+        <a href="book/" target="_blank">
+            <div class="head-tab">参考文档</div>
+        </a>
+        <div class="head-tab" onclick="goWhy()">推荐原因</div>
+        <div class="head-tab" onclick="goLog()">更新日志</div>
+        <a href="https://gitee.com/qiruipeng/pptshow" target="_blank">
+            <div class="head-tab">Gitee</div>
+        </a>
+        <div class="language">
+            <div class="lan-cn">中</div>
+            <div class="lan-en">En</div>
+        </div>
+    </div>
+</div>
+
+<div class="head-tips">
+    <div class="head-tips-main">🔥V1.3正式版🔥正式版已经上线，欢迎大家使用！</div>
+</div>
+
+<div class="main-box">
+    <div class="main">
+        <h1>PPTShow</h1>
+        <p>免费开源的Java原生生成PPT工具包，支持2010版本PPT新特性，不依赖任何第三方组件，Linux、Windows都可以流畅使用。更支持PPT生成MP4等实用功能</p>
+        <div class="main-btn-box">
+            <a href="book/" target="_blank">
+                <div class="btn-hot">参考文档</div>
+            </a>
+            <a href="https://gitee.com/qiruipeng/pptshow" target="_blank">
+                <div class="btn-not-hot">Gitee</div>
+            </a>
+            <a href="https://gitee.com/qiruipeng/pptshow" target="_blank">
+                <div class="btn-sm">Github(英文)</div>
+            </a>
+        </div>
+
+        <div class="tab-box">
+            <div class="tab" id="tab-element" onclick="boxTab1Show()">元素</div>
+            <div class="tab" id="tab-animation" onclick="boxTab2Show()">动画</div>
+            <div class="tab" id="tab-media" onclick="boxTab3Show()">媒体</div>
+            <div class="tab" id="tab-more" onclick="boxTab4Show()">拓展</div>
+        </div>
+    </div>
+</div>
+
+<div class="box">
+    <div class="box-tab1"></div>
+    <div class="box-tab1-cn"></div>
+    <div class="box-tab2"></div>
+    <div class="box-tab2-cn"></div>
+    <div class="box-tab3"></div>
+    <div class="box-tab3-cn"></div>
+    <div class="box-tab3-music"></div>
+    <div class="box-tab4-cn"></div>
+</div>
+
+<h2 id="why-tab">为什么选择PPTShow</h2>
+<p class="title-p">Why choose PPTShow as the solution</p>
+
+<div class="why-box">
+    <div class="why-once why-margin-right why1">
+        <h3>跨平台</h3>
+        <p>不依赖第三方组件，原生生成PPT文件，Linux也能用。</p>
+    </div>
+    <div class="why-once why2">
+        <h3>强兼容</h3>
+        <p>兼容Microsoft office、WPS等软件，支持中文字体等本土化功能。</p>
+    </div>
+    <div class="why-once why-margin-right why3">
+        <h3>版本新</h3>
+        <p>支持PPT2010版本新特性，简单的代码也能让人眼前一亮。</p>
+    </div>
+    <div class="why-once why4">
+        <h3>易上手</h3>
+        <p>屏蔽底层XML交互，不需要考虑XML节点相关操作问题。</p>
+    </div>
+</div>
+
+<h2>参考文档</h2>
+<p class="title-p">Reference document</p>
+
+<div class="doc-box">
+    <a href="book/kuaisukaishi.html" target="_blank">
+        <div class="doc-once doc1">
+            <h4>10分钟快速入门</h4>
+        </div>
+    </a>
+    <a href="book/background.html#gradientbackground-渐变背景" target="_blank">
+        <div class="doc-once doc2">
+            <h4>如何设置渐变背景</h4>
+        </div>
+    </a>
+    <a href="book/pptShowSide.html#修改或读取背景音乐" target="_blank">
+        <div class="doc-once doc3">
+            <h4>如何添加背景音乐</h4>
+        </div>
+    </a>
+    <a href="book/pptShape.html" target="_blank">
+        <div class="doc-once doc4">
+            <h4>如何设置图形元素</h4>
+        </div>
+    </a>
+    <a href="book/" target="_blank">
+        <div class="doc-more">
+            <div class="doc-icon"></div>
+            查看全部
+        </div>
+    </a>
+</div>
+
+<h2 id="log-tab">更新日志</h2>
+<p class="title-p">Update log</p>
+
+<div class="update-log">
+    <h3>V1.3</h3>
+    <p class="version-time">更新时间：2023/03/18</p>
+    <p>
+        1. 增加渐变异常拦截，如果起始位置不在0~100将自动设置最接近合法值；<br>
+        2. 优化读取功能，增加文字图形模式，可以读取出图形元素内部的文字信息；<br>
+        3. 增加线条元素；<br>
+        4. 增加PPT文本元素直接读取全部文本方法，避免手动取值拼接；<br>
+        5. 增加自定义图形临时支持方案，需要手动传入XML，后期会更新其他方式，暂不推荐使用；<br>
+        6. 图片元素新增支持SVG图像；<br>
+        7. 新增中央仓库引用，无需手动添加jar包。<br>
+    </p>
+    <br>
+    <h3>V1.2</h3>
+    <p class="version-time">更新时间：2022/12/31</p>
+    <p>
+        1. 增加PPT背景音乐功能；<br>
+        2. 增加PPT页面换页动画功能；<br>
+        3. 增加PPT页面自动播放功能；<br>
+        4. 增加close操作，允许用户手动删除临时文件；<br>
+        5. 支持PPT元素动画排序，允许同时生成；<br>
+        6. 新增元素收缩动画、跨越动画、水平/垂直展开动画；<br>
+        7. 增加读取现有PPT功能；<br>
+        8. 增加微软Office自动另存为刷新文件功能，可以避免部分兼容性比较差的软件读取文档出现无法解析问题，此功能仅限Windows系统可用。
+    </p>
+    <br>
+    <h3>V1.1</h3>
+    <p class="version-time">更新时间：2022/11/18</p>
+    <p>
+        1. 增加支持元素动画；<br>
+        2. 增加PPT页面换页动画功能；<br>
+        3. 简化初始化文件，生成文件更小；<br>
+        4. 修改MP4生成的vbs脚本，减小卡死可能性，但是微软Office仍有小概率会在生成的时候程序卡死，暂时无法处理。
+    </p>
+</div>
+
+<div class="foot">
+    <div class="foot-main">
+        <p>© 2021-2023 PPTShow保留所有权利</p>
+        <p>本项目遵循<a href="https://gitee.com/qiruipeng/pptshow/blob/master/LICENSE" target="_blank">Apache License 2.0</a>开源协议
+        </p>
+        <p>开发者联系方式：qiruipeng@88.com</p>
+    </div>
+</div>
+
+<script>
+    boxTab1Show()
+</script>
+</body>
+
+</html>

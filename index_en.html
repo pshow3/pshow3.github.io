@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>PPTShow - Java open source toolkit for generating PPT</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>PPTShow——Java open source toolkit for generating PPT</title>
+    <meta name="keywords" content="PPTShow,Java generated PPT, open source PPT, jar package">
+    <meta name="description"
+          content="PPTShow is a free open source Java native generation of PPT toolkit , support the 2010 version of the new features of PPT , does not depend on any third-party components , Linux, Windows can be used smoothly . More support for PPT to generate MP4 and other useful features">
     <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <script src="js/jquery.min.js"></script>
@@ -12,147 +16,168 @@
 </head>
 
 <body>
-    <div class="head">
-        <div class="head-main">
-            <div class="logo"></div>
-            <div class="head-tab">参考文档</div>
-            <div class="head-tab">推荐原因</div>
-            <div class="head-tab">更新日志</div>
-            <div class="head-tab">GitHub</div>
-            <div class="language">
-                <div class="lan-cn">中</div>
-                <div class="lan-en">En</div>
-            </div>
+<div class="head">
+    <div class="head-main">
+        <div class="logo"></div>
+        <a href="book/" target="_blank">
+            <div class="head-tab" style="width: 200px">Reference Documents</div>
+        </a>
+        <div class="head-tab" onclick="goWhy()" style="width: 200px">Recommendation Reason</div>
+        <div class="head-tab" onclick="goLog()" style="width: 140px">Update Log</div>
+        <a href="https://github.com/qrpcode/pptshow" target="_blank">
+            <div class="head-tab" style="width: 80px">Github</div>
+        </a>
+        <div class="language" style="margin-left: 402px;">
+            <a href="index.html"><div class="lan-cn" style="color: #1196db;background-color: #FFF">中</div></a>
+            <div class="lan-en" style="background-color: #1196db;color: #FFF;">En</div>
         </div>
     </div>
+</div>
 
-    <div class="head-tips">
-        <div class="head-tips-main">🔥V1.3正式版🔥正式版已经上线，欢迎大家使用！</div>
-    </div>
+<div class="head-tips">
+    <div class="head-tips-main">🔥V1.3 Official Version🔥The official version is now online, welcome to use it!</div>
+</div>
 
-    <div class="main-box">
-        <div class="main">
-            <h1>PPTShow</h1>
-            <p>免费开源的Java原生生成PPT工具包，支持2010版本PPT新特性，不依赖任何第三方组件，Linux、Windows都可以流畅使用。更支持PPT生成MP4等实用功能</p>
-            <div class="main-btn-box">
-                <div class="btn-hot">参考文档</div>
-                <div class="btn-not-hot">Gitee</div>
-                <div class="btn-sm">Github(英文)</div>
-            </div>
+<div class="main-box">
+    <div class="main">
+        <h1>PPTShow</h1>
+        <p style="max-width: 1000px;">Free open source Java native generation of PPT toolkit , support the 2010 version of the new features of PPT , does not depend on any third-party components , Linux, Windows can be used smoothly . More support for PPT to generate MP4 and other useful features</p>
+        <div class="main-btn-box" style="width: 374px;">
+            <a href="book/" target="_blank">
+                <div class="btn-hot" style="width: 230px;">Reference Documents</div>
+            </a>
+            <a href="https://github.com/qrpcode/pptshow" target="_blank">
+                <div class="btn-not-hot">Github</div>
+            </a>
+            <a href="https://gitee.com/qiruipeng/pptshow" target="_blank">
+                <div class="btn-sm" style="left: 266px;">Gitee(Chinese)</div>
+            </a>
+        </div>
 
-            <div class="tab-box">
-                <div class="tab" id="tab-element" onclick="boxTab1Show()">元素</div>
-                <div class="tab" id="tab-animation" onclick="boxTab2Show()">动画</div>
-                <div class="tab" id="tab-media" onclick="boxTab3Show()">媒体</div>
-                <div class="tab" id="tab-more" onclick="boxTab4Show()">拓展</div>
-            </div>
+        <div class="tab-box">
+            <div class="tab" id="tab-element" onclick="boxTab1Show()">Element</div>
+            <div class="tab" id="tab-animation" onclick="boxTab2Show()">Animation</div>
+            <div class="tab" id="tab-media" onclick="boxTab3Show()">Media</div>
+            <div class="tab" id="tab-more" onclick="boxTab4Show()">Expansion</div>
         </div>
     </div>
+</div>
 
-    <div class="box">
-        <div class="box-tab1"></div>
-        <div class="box-tab1-cn"></div>
-        <div class="box-tab2"></div>
-        <div class="box-tab2-cn"></div>
-        <div class="box-tab3"></div>
-        <div class="box-tab3-cn"></div>
-        <div class="box-tab3-music"></div>
-        <div class="box-tab4-cn"></div>
+<div class="box">
+    <div class="box-tab1"></div>
+    <div class="box-tab1-cn"></div>
+    <div class="box-tab2"></div>
+    <div class="box-tab2-cn"></div>
+    <div class="box-tab3"></div>
+    <div class="box-tab3-cn"></div>
+    <div class="box-tab3-music"></div>
+    <div class="box-tab4-cn"></div>
+</div>
+
+<h2 id="why-tab">Why choose PPTShow as the solution</h2>
+<p class="title-p"> </p>
+<div class="why-box">
+    <div class="why-once why-margin-right why1">
+        <h3>Cross Platform</h3>
+        <p>No dependence on third-party components, native generation of PPT files, Linux also works.</p>
     </div>
-
-    <h2>为什么选择PPTShow</h2>
-    <p class="title-p">Why choose PPTShow as the solution</p>
-
-    <div class="why-box">
-        <div class="why-once why-margin-right why1">
-            <h3>跨平台</h3>
-            <p>不依赖第三方组件，原生生成PPT文件，Linux也能用。</p>
-        </div>
-        <div class="why-once why2">
-            <h3>强兼容</h3>
-            <p>兼容Microsoft office、WPS等软件，支持中文字体等本土化功能。</p>
-        </div>
-        <div class="why-once why-margin-right why3">
-            <h3>版本新</h3>
-            <p>支持PPT2010版本新特性，简单的代码也能让人眼前一亮。</p>
-        </div>
-        <div class="why-once why4">
-            <h3>易上手</h3>
-            <p>屏蔽底层XML交互，不需要考虑XML节点相关操作问题。</p>
-        </div>
+    <div class="why-once why2">
+        <h3>Strongly compatible</h3>
+        <p>Compatible with Microsoft office, WPS and other software, support Chinese fonts and other localized features.</p>
     </div>
+    <div class="why-once why-margin-right why3">
+        <h3>Version New</h3>
+        <p>Support new features of PPT2010 version, simple code can also make a difference.</p>
+    </div>
+    <div class="why-once why4">
+        <h3>Easy to start</h3>
+        <p>Shield the underlying XML interaction from XML node-related manipulation issues.</p>
+    </div>
+</div>
 
-    <h2>参考文档</h2>
-    <p class="title-p">Reference document</p>
+<h2>Reference document</h2>
+<p class="title-p"> </p>
 
-    <div class="doc-box">
+<div class="doc-box">
+    <a href="book/kuaisukaishi.html" target="_blank">
         <div class="doc-once doc1">
-            <h4>10分钟快速入门</h4>
+            <h4 style="font-size:14px;">10-minute Quick Start</h4>
         </div>
+    </a>
+    <a href="book/background.html#gradientbackground-渐变背景" target="_blank">
         <div class="doc-once doc2">
-            <h4>如何设置渐变背景</h4>
+            <h4 style="font-size:14px;">How to set gradient background</h4>
         </div>
+    </a>
+    <a href="book/pptShowSide.html#修改或读取背景音乐" target="_blank">
         <div class="doc-once doc3">
-            <h4>如何添加背景音乐</h4>
+            <h4 style="font-size:14px;">How to add background music</h4>
         </div>
+    </a>
+    <a href="book/pptShape.html" target="_blank">
         <div class="doc-once doc4">
-            <h4>如何设置元素动作顺序</h4>
+            <h4 style="font-size:14px;">How to set graphic elements</h4>
         </div>
+    </a>
+    <a href="book/" target="_blank">
         <div class="doc-more">
             <div class="doc-icon"></div>
-            查看全部
+            View All
         </div>
-    </div>
+    </a>
+</div>
 
-    <h2>更新日志</h2>
-    <p class="title-p">Update log</p>
+<h2 id="log-tab">Update log</h2>
+<p class="title-p"> </p>
 
-    <div class="update-log">
-        <h3>V1.3</h3>
-        <p class="version-time">更新时间：2023/03/18</p>
-        <p>
-            1. 增加渐变异常拦截，如果起始位置不在0~100将自动设置最接近合法值；<br>
-            2. 优化读取功能，增加文字图形模式，可以读取出图形元素内部的文字信息；<br>
-            3. 增加线条元素；<br>
-            4. 增加PPT文本元素直接读取全部文本方法，避免手动取值拼接；<br>
-            5. 增加自定义图形临时支持方案，需要手动传入XML，后期会更新其他方式，暂不推荐使用；<br>
-            6. 新增中央仓库引用，无需手动添加jar包。<br>
+<div class="update-log">
+    <h3>V1.3</h3>
+    <p class="version-time">Updated on: 2023/03/18</p>
+    <p>
+        1. adding gradient exception interception, if the starting position is not in 0~100 will automatically set the closest legal value;<br>
+        2. optimizing the reading function, adding text graphic mode, which can read out the text information inside the graphic element;<br>
+        3. adding line elements;<br>
+        4. adding PPT text elements to directly read all text methods to avoid manual value taking and splicing;<br>
+        5. adding a temporary support scheme for custom graphics, which requires manual input of XML and will be updated in other ways later, and is not recommended for the time being;<br>
+        6. adding support for SVG images to the picture element;<br>
+        7. add central repository reference, no need to manually add jar packages.<br>
+    </p>
+    <br>
+    <h3>V1.2</h3>
+    <p class="version-time">Updated on: 2022/12/31</p>
+    <p>
+        1. adding the function of PPT background music;<br>
+        2. adding the function of PPT page change animation;<br>
+        3. adding PPT page auto-play function;<br>
+        4. adding close operation, allowing users to delete temporary files manually;<br>
+        5. supporting PPT element animation sorting and allowing simultaneous generation;<br>
+        6. adding element shrinkage animation, spanning animation and horizontal/vertical expansion animation;<br>
+        7. add the function of reading existing PPTs;<br>
+        8. add Microsoft Office auto save as refresh file function, which can avoid the problem of unresolved documents read by some software with poor compatibility.<br>
+    </p>
+    <br>
+    <h3>V1.1</h3>
+    <p class="version-time">Updated on: 2022/11/18</p>
+    <p>
+        1. adding support for element animations;<br>
+        2. adding the function of PPT page change animation;<br>
+        3. simplify the initialization file and generate smaller files;<br>
+        4. modify the vbs script generated by MP4 to reduce the possibility of jamming, but there is still a small chance that Microsoft Office will jam when generating the program, which cannot be handled for the time being.<br>
+    </p>
+</div>
+
+<div class="foot">
+    <div class="foot-main">
+        <p>© 2021-2023 All rights reserved by PPTShow</p>
+        <p>This project follows <a href="https://gitee.com/qiruipeng/pptshow/blob/master/LICENSE" target="_blank"> Apache License 2.0 </a> Open Source Protocols
         </p>
-        <br>
-        <h3>V1.2</h3>
-        <p class="version-time">更新时间：2022/12/31</p>
-        <p>
-            1. 增加PPT背景音乐功能；<br>
-            2. 增加PPT页面换页动画功能；<br>
-            3. 增加PPT页面自动播放功能；<br>
-            4. 增加close操作，允许用户手动删除临时文件；<br>
-            5. 支持PPT元素动画排序，允许同时生成；<br>
-            6. 新增元素收缩动画、跨越动画、水平/垂直展开动画；<br>
-            7. 增加读取现有PPT功能；<br>
-            8. 增加微软Office自动另存为刷新文件功能，可以避免部分兼容性比较差的软件读取文档出现无法解析问题，此功能仅限Windows系统可用。
-        </p>
-        <br>
-        <h3>V1.1</h3>
-        <p class="version-time">更新时间：2022/11/18</p>
-        <p>
-            1. 增加支持元素动画；<br>
-            2. 增加PPT页面换页动画功能；<br>
-            3. 简化初始化文件，生成文件更小；<br>
-            4. 修改MP4生成的vbs脚本，减小卡死可能性，但是微软Office仍有小概率会在生成的时候程序卡死，暂时无法处理。
-        </p>
+        <p>Developer Contact: qiruipeng@88.com</p>
     </div>
+</div>
 
-    <div class="foot">
-        <div class="foot-main">
-            <p>© 2021-2023 PPTShow保留所有权利</p>
-            <p>本项目遵循<a href="https://gitee.com/qiruipeng/pptshow/blob/master/LICENSE" target="_blank">Apache License 2.0</a>开源协议</p>
-            <p>开发者联系方式：qiruipeng@88.com</p>
-        </div>
-    </div>
-
-    <script>
-        boxTab1Show()
-    </script>
+<script>
+    boxTab1Show()
+</script>
 </body>
 
 </html>
